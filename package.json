@@ -16,6 +16,8 @@
     "mocha-lcov-reporter": "0.0.2"
   },
   "dependencies": {
+    "bl": "^0.9.4",
+    "noop": "git://github.com/utilise/noop",
     "through": "^2.3.7"
   }
 }

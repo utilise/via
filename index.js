@@ -1,15 +1,16 @@
 var through = require('through')
+  , noop = require('noop')
 
 module.exports = function via(fn){
-  var buffer = ''
+  var stream = through(write, noop)
+    , buffer = ''
+    , ending
 
-  return through(write, end)
+  return stream
 
   function write(chunk){
     buffer += chunk
-  }
-
-  function end(){
-    this.queue(fn(buffer.toString()))
+    ending && clearTimeout(ending)
+    ending = setTimeout(function(){ stream.push(fn(buffer.toString())) }, 20)
   }
 }
