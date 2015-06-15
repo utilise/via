@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "bl": "^0.9.4",
-    "noop": "git://github.com/utilise/noop",
+    "noop": "git+https://github.com/utilise/noop.git",
     "through": "^2.3.7"
   }
 }
