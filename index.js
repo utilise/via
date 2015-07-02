@@ -1,16 +1,20 @@
-var through = require('through')
+var debounce = require('debounce')
+  , through = require('through')
   , noop = require('noop')
 
 module.exports = function via(fn){
   var stream = through(write, noop)
+    , once = debounce(push)
     , buffer = ''
-    , ending
 
   return stream
 
   function write(chunk){
     buffer += chunk
-    ending && clearTimeout(ending)
-    ending = setTimeout(function(){ stream.push(fn(buffer.toString())) }, 20)
+    once()
+  }
+
+  function push(){ 
+    stream.push(fn(buffer.toString())) 
   }
 }

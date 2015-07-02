@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "bl": "^0.9.4",
+    "debounce": "git+https://github.com/utilise/debounce.git",
     "noop": "git+https://github.com/utilise/noop.git",
     "through": "^2.3.7"
   }
