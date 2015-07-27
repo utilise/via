@@ -1,5 +1,5 @@
 {
-  "name": "via",
+  "name": "utilise.via",
   "version": "0.0.0",
   "main": "index.js",
   "browser": {
@@ -20,8 +20,8 @@
   },
   "dependencies": {
     "bl": "^0.9.4",
-    "debounce": "git+https://github.com/utilise/debounce.git",
-    "noop": "git+https://github.com/utilise/noop.git",
+    "utilise.debounce": "*",
+    "utilise.noop": "*",
     "through": "^2.3.7"
   }
 }
